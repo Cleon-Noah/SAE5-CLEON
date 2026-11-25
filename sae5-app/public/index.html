@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAE5 - Jardins de Cocagne | Application de gestion</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Chart.js pour les graphiques (optimisation + calendrier) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-900 font-inter antialiased">
+
+  <!-- Barre de navigation -->
+  <nav class="bg-green-900 text-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 bg-green-400 rounded-lg flex items-center justify-center font-bold text-green-900">C</div>
+          <div>
+            <div class="font-bold text-lg tracking-tight">Jardin de Cocagne</div>
+            <div class="text-xs text-green-200 uppercase tracking-wider">SAE5 — Gestion des paniers & tournées</div>
+          </div>
+        </div>
+        <div class="hidden md:flex space-x-1">
+          <button onclick="app.showSection('accueil')" class="nav-btn px-4 py-2 rounded-md bg-green-800 text-white transition">Accueil</button>
+          <button onclick="app.showSection('tournées')" class="nav-btn px-4 py-2 rounded-md hover:bg-green-800/50 transition border border-transparent hover:border-green-300">🚚 Tournées (Rendu 15)</button>
+          <button onclick="app.showSection('calendrier')" class="nav-btn px-4 py-2 rounded-md hover:bg-green-800/50 transition border border-transparent hover:border-green-300">📅 Calendrier (Rendu 16)</button>
+          <button onclick="app.showSection('commande')" class="nav-btn px-4 py-2 rounded-md hover:bg-green-800/50 transition border border-transparent hover:border-green-300">🛒 Commande (Rendu 17)</button>
+          <button onclick="app.showSection('donnees')" class="nav-btn px-4 py-2 rounded-md hover:bg-green-800/50 transition border border-transparent hover:border-green-300">🗄️ Données</button>
+        </div>
+        <div class="flex items-center gap-2">
+          <span id="badge-stats" class="bg-green-100 text-green-900 text-xs px-2 py-1 rounded-full font-semibold hidden">0 paniers</span>
+          <button onclick="app.resetData()" class="text-xs text-green-200 hover:text-white underline underline-offset-4">Réinitialiser les données</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenu principal -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6" id="app-container">
+    <!-- Les sections sont injectées ici par JS -->
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white py-6 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 text-center text-slate-500 text-sm">
+      <p>SAE5 — Développement avancé • Jardins de Cocagne • Optimisation (sujet B) · Back-office (sujet A) · Interface (sujet A)</p>
+    </div>
+  </footer>
+
+  <script src="js/db.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
